@@ -360,3 +360,204 @@ Já cobrimos as principais propriedades e dicas rápidas de CSS. A seguir, vou c
 
 ---
 
+Já cobrimos as principais propriedades, técnicas avançadas e boas práticas de CSS. A seguir, vamos explorar conceitos adicionais e ferramentas que podem expandir ainda mais seu domínio sobre o CSS.
+
+---
+
+### **18. Conceitos Avançados**
+#### **CSS Custom Properties (Variáveis) com Escopo**
+- Variáveis CSS podem ser limitadas a escopos específicos.  
+  Exemplo:  
+  ```css
+  :root {
+    --main-color: #3498db;
+  }
+
+  .dark-theme {
+    --main-color: #2c3e50;
+  }
+
+  body {
+    background-color: var(--main-color);
+  }
+  ```
+
+#### **Grid Avançado**
+- Usando **grid-auto-flow** para controle automático:  
+  ```css
+  .container {
+    display: grid;
+    grid-auto-flow: dense; /* Preenche lacunas automaticamente */
+    grid-template-columns: repeat(3, 1fr);
+  }
+  ```
+
+- **Alinhamento no Grid**:  
+  ```css
+  .container {
+    display: grid;
+    place-items: center; /* Centraliza itens */
+  }
+  ```
+
+#### **CSS Subgrid**
+- Disponível em navegadores modernos, permite herdar o grid do elemento pai:  
+  ```css
+  .parent {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .child {
+    display: subgrid;
+  }
+  ```
+
+---
+
+### **19. Pré-processadores CSS**
+#### **SASS/SCSS**
+- Ferramenta que expande as funcionalidades do CSS com aninhamento, mixins e loops.  
+  Exemplo:  
+  ```scss
+  $primary-color: #3498db;
+
+  body {
+    color: $primary-color;
+
+    h1 {
+      font-size: 2em;
+    }
+  }
+  ```
+
+- **Mixins**: Reutilização de estilos.  
+  ```scss
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box {
+    @include flex-center;
+  }
+  ```
+
+#### **LESS**
+- Similar ao SASS, com sintaxe mais leve.  
+  Exemplo:  
+  ```less
+  @main-color: #3498db;
+
+  body {
+    color: @main-color;
+  }
+  ```
+
+---
+
+### **20. Acessibilidade com CSS**
+#### **Foco Visível**
+- Garanta que elementos focados sejam destacados:  
+  ```css
+  button:focus {
+    outline: 2px solid #3498db;
+  }
+  ```
+
+#### **Contrast Checker**
+- Verifique contraste entre texto e fundo para atender às diretrizes WCAG.
+
+#### **Preferências do Usuário**
+- Respeite preferências do sistema operacional:  
+  ```css
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #fff;
+    }
+  }
+  ```
+
+---
+
+### **21. Metodologias de Organização**
+#### **BEM (Block Element Modifier)**
+- Ajuda a manter consistência em grandes projetos.  
+  Exemplo:  
+  ```html
+  <div class="card card--highlighted">
+    <h2 class="card__title">Título</h2>
+    <p class="card__content">Conteúdo</p>
+  </div>
+  ```
+
+  CSS:  
+  ```css
+  .card {
+    border: 1px solid #ddd;
+  }
+  .card--highlighted {
+    border-color: #3498db;
+  }
+  .card__title {
+    font-size: 1.5em;
+  }
+  ```
+
+---
+
+### **22. Animações e Efeitos Visuais Avançados**
+#### **Scroll Animations**
+- Usando `scroll-behavior` para navegação suave:  
+  ```css
+  html {
+    scroll-behavior: smooth;
+  }
+  ```
+
+#### **Parallax com CSS Puro**
+- Crie efeito de paralaxe simples:  
+  ```css
+  .parallax {
+    background-image: url('imagem.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  ```
+
+#### **Blur e Filtros**
+- Aplicando efeitos visuais com `filter`:  
+  ```css
+  .blurred {
+    filter: blur(5px);
+  }
+
+  .grayscale {
+    filter: grayscale(100%);
+  }
+  ```
+
+---
+
+### **23. Ferramentas e Extensões CSS**
+#### **PostCSS**
+- Transforma CSS moderno em código compatível com navegadores antigos.
+
+#### **Autoprefixer**
+- Adiciona prefixos automaticamente para garantir compatibilidade:  
+  ```css
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  ```
+
+#### **CSS Modules**
+- Permite escopo local para estilos em projetos JavaScript modernos.
+
+---
+
+Com essa extensão da cheat-sheet, você agora tem acesso a recursos mais avançados e específicos para otimizar e modernizar o uso de CSS em seus projetos.
+
