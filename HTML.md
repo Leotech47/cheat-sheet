@@ -764,3 +764,129 @@ No CSS:
 
 ---
 
+### **HTML e Integração com Outras Tecnologias**
+
+#### **Integração com APIs Externas**
+1. **Consumo de APIs REST**
+   - Usando `fetch` para obter dados:  
+     ```html
+     <div id="resultado"></div>
+     <script>
+         fetch('https://api.example.com/dados')
+             .then(response => response.json())
+             .then(data => {
+                 document.getElementById('resultado').innerText = JSON.stringify(data);
+             })
+             .catch(error => console.error('Erro:', error));
+     </script>
+     ```
+
+2. **Uso de GraphQL**
+   - Consulta dados de APIs GraphQL:  
+     ```html
+     <script>
+         const query = `
+             {
+                 usuarios {
+                     id
+                     nome
+                 }
+             }
+         `;
+         fetch('https://api.example.com/graphql', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({ query }),
+         })
+             .then(response => response.json())
+             .then(data => console.log(data));
+     </script>
+     ```
+
+---
+
+#### **HTML e WebAssembly (WASM)**
+- Execute código de baixo nível (ex.: C, Rust) diretamente no navegador:  
+  ```html
+  <script>
+      WebAssembly.instantiateStreaming(fetch('programa.wasm'))
+          .then(obj => console.log(obj.instance.exports.funcao()));
+  </script>
+  ```
+
+---
+
+### **HTML e Suporte a IoT (Internet das Coisas)**
+
+1. **Web Bluetooth API**
+   - Conecte dispositivos Bluetooth:  
+     ```html
+     <script>
+         navigator.bluetooth.requestDevice({ acceptAllDevices: true })
+             .then(device => console.log('Dispositivo conectado:', device.name))
+             .catch(error => console.error('Erro:', error));
+     </script>
+     ```
+
+2. **Web USB API**
+   - Acesse dispositivos USB diretamente:  
+     ```html
+     <script>
+         navigator.usb.requestDevice({ filters: [{ vendorId: 0x1234 }] })
+             .then(device => device.open())
+             .then(() => console.log('Dispositivo USB conectado'))
+             .catch(error => console.error('Erro:', error));
+     </script>
+     ```
+
+---
+
+### **Técnicas de Debug e Ferramentas**
+1. **Comentários Condicionais**
+   - Específico para navegadores antigos:  
+     ```html
+     <!--[if IE]>
+     <p>Este conteúdo é visível apenas no Internet Explorer.</p>
+     <![endif]-->
+     ```
+
+2. **Depuração com Ferramentas de Navegadores**
+   - Utilize o **DevTools** para inspecionar elementos, analisar desempenho e depurar JavaScript.
+
+3. **Validação de Código**
+   - Use o [W3C Validator](https://validator.w3.org/) para garantir conformidade com os padrões.
+
+---
+
+### **Tendências Futuras do HTML**
+1. **HTML Modular**
+   - Importação de HTML usando `<template>` e `<importmap>`:  
+     ```html
+     <template id="card">
+         <div class="card">
+             <h3>Exemplo</h3>
+             <p>Conteúdo do card.</p>
+         </div>
+     </template>
+     <script>
+         const template = document.getElementById('card');
+         document.body.appendChild(template.content.cloneNode(true));
+     </script>
+     ```
+
+2. **HTML e AI (Inteligência Artificial)**
+   - Integração com APIs de IA (ex.: ChatGPT ou reconhecimento de imagens):  
+     ```html
+     <script>
+         fetch('https://api.openai.com/v1/completions', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer API_KEY' },
+             body: JSON.stringify({ prompt: 'Olá, IA!', max_tokens: 50 }),
+         })
+             .then(response => response.json())
+             .then(data => console.log(data.choices[0].text));
+     </script>
+     ```
+
+---
+
