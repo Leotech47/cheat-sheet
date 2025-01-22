@@ -362,3 +362,144 @@ No CSS:
 
 ---
 
+### **HTML e Frameworks Populares**
+
+#### **Integração com CSS Frameworks**
+1. **Bootstrap**  
+   - Inclua o CSS e JS do Bootstrap para usar componentes e grids prontos:  
+     ```html
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     ```
+
+   - Exemplo de Grid Responsivo:  
+     ```html
+     <div class="container">
+         <div class="row">
+             <div class="col-md-6">Coluna 1</div>
+             <div class="col-md-6">Coluna 2</div>
+         </div>
+     </div>
+     ```
+
+2. **Tailwind CSS**  
+   - Um framework de utilitários para estilização rápida:  
+     ```html
+     <script src="https://cdn.tailwindcss.com"></script>
+     ```
+
+   - Exemplo de Botão Estilizado:  
+     ```html
+     <button class="bg-blue-500 text-white px-4 py-2 rounded">Clique Aqui</button>
+     ```
+
+---
+
+#### **Integração com JavaScript Frameworks**
+1. **React**
+   - Renderização de componentes HTML dinâmicos:
+     ```html
+     <div id="root"></div>
+     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+     <script>
+         const root = ReactDOM.createRoot(document.getElementById('root'));
+         root.render(React.createElement('h1', null, 'Olá, React!'));
+     </script>
+     ```
+
+2. **Vue.js**
+   - Vinculação de dados diretamente no HTML:
+     ```html
+     <div id="app">
+         <p>{{ mensagem }}</p>
+     </div>
+     <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+     <script>
+         const app = Vue.createApp({
+             data() {
+                 return { mensagem: 'Olá, Vue!' };
+             }
+         });
+         app.mount('#app');
+     </script>
+     ```
+
+3. **Angular**
+   - Criação de aplicativos SPA (Single Page Applications) com templates HTML.  
+   ```html
+   <div ng-app="myApp" ng-controller="myCtrl">
+       <p>{{ mensagem }}</p>
+   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+   <script>
+       const app = angular.module('myApp', []);
+       app.controller('myCtrl', function($scope) {
+           $scope.mensagem = 'Olá, AngularJS!';
+       });
+   </script>
+   ```
+
+---
+
+### **Práticas Avançadas de SEO**
+1. **Marcação Estruturada com JSON-LD**
+   - Ajuda os mecanismos de busca a entender o conteúdo da página:
+     ```html
+     <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "WebPage",
+       "name": "Título da Página",
+       "description": "Descrição breve da página."
+     }
+     </script>
+     ```
+
+2. **Uso de Tags Canonical**
+   - Evita duplicação de conteúdo:
+     ```html
+     <link rel="canonical" href="https://example.com/pagina-original">
+     ```
+
+3. **Breadcrumbs com Schema.org**
+   - Melhora a navegação nos resultados de busca:
+     ```html
+     <nav aria-label="breadcrumb">
+         <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="/">Home</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Página Atual</li>
+         </ol>
+     </nav>
+     ```
+
+---
+
+### **Novos Recursos do HTML5**
+1. **Web Storage (Local e Session Storage)**
+   - Armazena dados localmente no navegador:
+     ```html
+     <script>
+         localStorage.setItem('chave', 'valor');
+         console.log(localStorage.getItem('chave'));
+     </script>
+     ```
+
+2. **Drag and Drop API**
+   - Permite arrastar e soltar elementos:
+     ```html
+     <div draggable="true" ondragstart="console.log('Arrastando!')">Arraste-me</div>
+     ```
+
+3. **Web Workers**
+   - Executa scripts em segundo plano:
+     ```html
+     <script>
+         const worker = new Worker('worker.js');
+         worker.onmessage = (e) => console.log(e.data);
+         worker.postMessage('Olá, Worker!');
+     </script>
+     ```
+
+---
+
