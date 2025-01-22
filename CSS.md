@@ -561,3 +561,160 @@ Já cobrimos as principais propriedades, técnicas avançadas e boas práticas d
 
 Com essa extensão da cheat-sheet, você agora tem acesso a recursos mais avançados e específicos para otimizar e modernizar o uso de CSS em seus projetos.
 
+Já exploramos conceitos avançados e boas práticas no uso do CSS. A seguir, vamos aprofundar em ferramentas de performance, integração com JavaScript e estratégias para manutenção de grandes projetos.
+
+---
+
+### **24. Performance em CSS**
+#### **Reduza o Tamanho do CSS**
+- **Minificação**: Use ferramentas como **CSSNano** ou **CleanCSS** para reduzir o tamanho dos arquivos removendo espaços e comentários.  
+  Exemplo antes e depois:  
+  ```css
+  /* Antes */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Depois */
+  body{margin:0;padding:0;}
+  ```
+
+#### **Evite Seletores Ineficientes**
+- Prefira seletores diretos:  
+  **Ineficiente:** `div > p span { color: red; }`  
+  **Eficiente:** `.text-highlight { color: red; }`
+
+#### **Use `will-change` com Cuidado**
+- Indique ao navegador quais elementos serão animados para otimizar o processamento:  
+  ```css
+  .animated {
+    will-change: transform, opacity;
+  }
+  ```
+
+#### **Combine Arquivos**
+- Sempre que possível, combine múltiplos arquivos CSS em um único arquivo para reduzir requisições HTTP.
+
+---
+
+### **25. Integração CSS com JavaScript**
+#### **Alterando Estilos com JavaScript**
+- Use a propriedade `style` para alterar diretamente um estilo:  
+  ```javascript
+  const elemento = document.querySelector('.box');
+  elemento.style.backgroundColor = 'blue';
+  ```
+
+#### **Adicionando/Removendo Classes**
+- Use `classList` para manipular classes:  
+  ```javascript
+  const button = document.querySelector('.button');
+  button.classList.add('active'); // Adiciona classe
+  button.classList.remove('active'); // Remove classe
+  button.classList.toggle('active'); // Alterna classe
+  ```
+
+#### **Lendo Estilos Computados**
+- Obtenha o valor real aplicado de um estilo:  
+  ```javascript
+  const elemento = document.querySelector('.box');
+  const estilo = getComputedStyle(elemento);
+  console.log(estilo.backgroundColor); // Exibe o valor calculado
+  ```
+
+---
+
+### **26. Estratégias para Manutenção**
+#### **Componentização**
+- Divida estilos em módulos reutilizáveis, como:  
+  - **Botões:** `buttons.css`  
+  - **Cabeçalhos:** `headers.css`  
+  - **Layouts:** `layouts.css`
+
+#### **Estruturas de Pastas**
+- Exemplo de organização:
+  ```
+  styles/
+  ├── base/
+  │   ├── reset.css
+  │   ├── typography.css
+  ├── components/
+  │   ├── buttons.css
+  │   ├── cards.css
+  ├── layouts/
+  │   ├── grid.css
+  │   ├── header.css
+  ├── themes/
+      ├── dark.css
+      ├── light.css
+  ```
+
+#### **Documentação de Estilos**
+- Use comentários claros e consistentes:
+  ```css
+  /* Botões primários usados em formulários */
+  .btn-primary {
+    background-color: #3498db;
+    color: white;
+  }
+  ```
+
+---
+
+### **27. Novas Funcionalidades do CSS**
+#### **CSS Houdini**
+- API que permite criar propriedades e comportamentos personalizados para o CSS.  
+  Exemplo com `paint` API:  
+  ```javascript
+  CSS.registerProperty({
+    name: '--custom-property',
+    syntax: '<color>',
+    inherits: false,
+    initialValue: 'black',
+  });
+  ```
+
+#### **Container Queries**
+- Permitem estilos baseados no tamanho do contêiner, não da janela:  
+  ```css
+  @container (min-width: 600px) {
+    .card {
+      font-size: 1.5rem;
+    }
+  }
+  ```
+
+#### **Nesting CSS (CSS Aninhado)**
+- Sintaxe simplificada para aninhar estilos, semelhante ao SCSS:  
+  ```css
+  .menu {
+    color: black;
+
+    & > li {
+      margin: 10px;
+    }
+  }
+  ```
+
+---
+
+### **28. Teste e Debug de CSS**
+#### **Ferramentas de Debug**
+- **CSSLint**: Analisa seu código para detectar problemas.
+- **DevTools**: Inspecione estilos diretamente no navegador.
+
+#### **Testando Responsividade**
+- Use ferramentas como:
+  - **Responsively App** (app para testar layouts responsivos).
+  - **Viewport Resizer** (extensão do navegador).
+
+#### **Testes Visuais**
+- Ferramentas como **Percy** e **Applitools** ajudam a comparar visuais entre versões de uma aplicação.
+
+---
+
+Com este conjunto expandido de estratégias e ferramentas, você está equipado para lidar com projetos CSS de qualquer escala e complexidade.
+
+
+
