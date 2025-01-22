@@ -1,6 +1,4 @@
-# cheat-sheet
-Principais CHEAT-SHEET DA PROGRAMAÇÃO
-### **HTML Cheat-Sheet: Principais Propriedades e Atributos**
+## **HTML Cheat-Sheet: Principais Propriedades e Atributos**
 
 #### **Estrutura Básica**
 ```html
