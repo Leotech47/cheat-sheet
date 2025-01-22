@@ -503,3 +503,135 @@ No CSS:
 
 ---
 
+### **HTML e Acessibilidade Web Avançada**
+
+#### **Técnicas para Melhorar a Acessibilidade**
+1. **Foco Visível**
+   - Garanta que os elementos focáveis tenham um estilo visível ao navegar com o teclado.  
+     ```css
+     button:focus {
+         outline: 2px solid #005fcc;
+         outline-offset: 2px;
+     }
+     ```
+
+2. **Rótulos Associados**
+   - Use `<label>` para associar rótulos a campos de formulário:  
+     ```html
+     <label for="email">E-mail:</label>
+     <input type="email" id="email" name="email" required>
+     ```
+
+3. **Leitores de Tela**
+   - Utilize **aria-labelledby** ou **aria-describedby** para descrever elementos.  
+     ```html
+     <div id="descricao">Descrição detalhada</div>
+     <button aria-describedby="descricao">Clique Aqui</button>
+     ```
+
+4. **Contraste de Cores**
+   - Garanta contraste suficiente entre texto e fundo (ex.: WCAG 2.1 recomenda 4.5:1 para texto normal).  
+     Teste suas cores em ferramentas como [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+
+---
+
+### **Segurança em HTML**
+
+1. **Evite Inserção de Scripts Maliciosos (XSS)**
+   - Escape caracteres especiais em conteúdo dinâmico:  
+     ```html
+     <div id="conteudo"></div>
+     <script>
+         const conteudoSeguro = '<b>Texto seguro</b>';
+         document.getElementById('conteudo').textContent = conteudoSeguro; // Usa textContent ao invés de innerHTML
+     </script>
+     ```
+
+2. **Use Atributos de Segurança**
+   - **rel="noopener noreferrer"** em links externos para evitar ataques via janelas abertas:  
+     ```html
+     <a href="https://exemplo.com" target="_blank" rel="noopener noreferrer">Abrir</a>
+     ```
+
+   - **Content Security Policy (CSP)**: Impede execução de scripts não autorizados.  
+     ```html
+     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com">
+     ```
+
+3. **HTTPS e Submissão de Dados**
+   - Sempre envie dados confidenciais via HTTPS e use o atributo **secure** em cookies.
+
+---
+
+### **Internacionalização (i18n) e Localização (l10n)**
+
+1. **Definir Idioma do Documento**
+   - Inclua o atributo **lang** no elemento `<html>`:  
+     ```html
+     <html lang="pt-BR">
+     ```
+
+2. **Direção de Texto**
+   - Para idiomas da direita para a esquerda, use **dir="rtl"**:  
+     ```html
+     <html lang="ar" dir="rtl">
+     ```
+
+3. **Elementos de Localização**
+   - Use `<time>` para representar datas e horas:  
+     ```html
+     <time datetime="2025-01-22">22 de Janeiro de 2025</time>
+     ```
+
+4. **Formato de Números e Moedas**
+   - Use APIs JavaScript como **Intl.NumberFormat**:  
+     ```html
+     <script>
+         const formatoBR = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+         console.log(formatoBR.format(12345.67)); // R$ 12.345,67
+     </script>
+     ```
+
+---
+
+### **HTML para Aplicações Progressivas (PWAs)**
+
+1. **Manifesto da Web**
+   - Inclua um arquivo **manifest.json** para transformar o site em um PWA:  
+     ```json
+     {
+       "name": "Meu PWA",
+       "short_name": "PWA",
+       "start_url": "/index.html",
+       "icons": [
+         {
+           "src": "icon-192.png",
+           "sizes": "192x192",
+           "type": "image/png"
+         }
+       ],
+       "background_color": "#ffffff",
+       "theme_color": "#000000",
+       "display": "standalone"
+     }
+     ```
+
+     Inclua o manifesto no HTML:  
+     ```html
+     <link rel="manifest" href="manifest.json">
+     ```
+
+2. **Service Workers**
+   - Scripts para cache offline e funcionalidades avançadas:  
+     ```javascript
+     self.addEventListener('install', (event) => {
+         event.waitUntil(
+             caches.open('meu-cache').then((cache) => {
+                 return cache.addAll(['/index.html', '/styles.css']);
+             })
+         );
+     });
+     ```
+
+---
+
