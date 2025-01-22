@@ -635,3 +635,132 @@ No CSS:
 
 ---
 
+### **HTML para Web Avançada**
+
+#### **Trabalhando com SVG (Scalable Vector Graphics)**
+1. **Inserção de SVG Inline**
+   - Permite manipulação direta com CSS e JavaScript.  
+     ```html
+     <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+     </svg>
+     ```
+
+2. **Uso de Arquivos Externos**
+   - Carregue arquivos SVG como imagens normais:  
+     ```html
+     <img src="imagem.svg" alt="Descrição do SVG">
+     ```
+
+3. **Animações em SVG**
+   - Use o elemento `<animate>` para criar animações:  
+     ```html
+     <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red">
+             <animate attributeName="r" from="10" to="40" dur="2s" repeatCount="indefinite" />
+         </circle>
+     </svg>
+     ```
+
+---
+
+#### **Elementos Customizados com Shadow DOM**
+- Permite criar elementos encapsulados com estilo e comportamento próprios.  
+  ```html
+  <my-element></my-element>
+  <script>
+      class MyElement extends HTMLElement {
+          constructor() {
+              super();
+              const shadow = this.attachShadow({ mode: 'open' });
+              shadow.innerHTML = `
+                  <style>
+                      p { color: blue; }
+                  </style>
+                  <p>Este é um elemento customizado!</p>
+              `;
+          }
+      }
+      customElements.define('my-element', MyElement);
+  </script>
+  ```
+
+---
+
+#### **Técnicas de Interatividade Avançada**
+1. **Elementos Interativos Personalizados**
+   - Crie botões ou áreas clicáveis com elementos `<div>` e ARIA:  
+     ```html
+     <div role="button" tabindex="0" onclick="alert('Clicado!')">Clique Aqui</div>
+     ```
+
+2. **Manipulação de Dados com WebSockets**
+   - Para comunicação em tempo real:  
+     ```html
+     <script>
+         const socket = new WebSocket('wss://exemplo.com/socket');
+         socket.onmessage = (event) => {
+             console.log('Mensagem recebida:', event.data);
+         };
+     </script>
+     ```
+
+3. **Atualizações em Tempo Real com Server-Sent Events (SSE)**
+   - Permite streaming de dados do servidor para o navegador:  
+     ```html
+     <script>
+         const eventSource = new EventSource('/stream');
+         eventSource.onmessage = (event) => {
+             console.log('Dados recebidos:', event.data);
+         };
+     </script>
+     ```
+
+---
+
+#### **HTML e Realidade Virtual/Aumentada**
+1. **WebXR para Experiências Imersivas**
+   - API para criar experiências de RV e RA diretamente no navegador.  
+     ```html
+     <script>
+         if (navigator.xr) {
+             navigator.xr.requestSession('immersive-vr').then((session) => {
+                 console.log('Sessão de RV iniciada!', session);
+             });
+         }
+     </script>
+     ```
+
+2. **Uso com A-Frame**
+   - Framework simplificado para criar experiências 3D e VR:  
+     ```html
+     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+     <a-scene>
+         <a-box position="0 1 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+     </a-scene>
+     ```
+
+---
+
+#### **Automação com Web Components**
+1. **Elementos de Carregamento Dinâmico**
+   - Combine elementos customizados com APIs para carregar dados dinamicamente:  
+     ```html
+     <user-card></user-card>
+     <script>
+         class UserCard extends HTMLElement {
+             connectedCallback() {
+                 fetch('https://api.exemplo.com/usuario/1')
+                     .then(response => response.json())
+                     .then(data => {
+                         this.innerHTML = `<h2>${data.nome}</h2>`;
+                     });
+             }
+         }
+         customElements.define('user-card', UserCard);
+     </script>
+     ```
+
+---
+
