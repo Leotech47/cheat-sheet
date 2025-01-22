@@ -234,3 +234,131 @@ Com o uso de **Web Components**, você pode criar seus próprios elementos.
 
 ---
 
+### **Performance e Otimização em HTML**
+
+#### **Carregamento de Recursos**
+1. **Defer e Async para Scripts**
+   - **defer**: Carrega o script em paralelo, mas só o executa após o carregamento completo do HTML.  
+   - **async**: Carrega e executa o script de forma independente (não recomendado para scripts que dependem de outros).  
+   ```html
+   <script src="script.js" defer></script>
+   <script src="script.js" async></script>
+   ```
+
+2. **Lazy Loading de Imagens e Iframes**
+   - Carrega imagens e iframes apenas quando estão próximos da visualização do usuário.  
+   ```html
+   <img src="imagem.jpg" alt="Descrição" loading="lazy">
+   <iframe src="https://example.com" loading="lazy"></iframe>
+   ```
+
+---
+
+#### **Otimização de Imagens**
+1. **Formatos Modernos**
+   - Use formatos como **WebP** para melhor compressão e qualidade.  
+   ```html
+   <picture>
+       <source srcset="imagem.webp" type="image/webp">
+       <img src="imagem.jpg" alt="Descrição">
+   </picture>
+   ```
+
+2. **Redimensionamento Responsivo**
+   - Use o atributo **srcset** para fornecer imagens adaptadas a diferentes resoluções.  
+   ```html
+   <img src="imagem-pequena.jpg" 
+        srcset="imagem-media.jpg 768w, imagem-grande.jpg 1200w" 
+        sizes="(max-width: 768px) 100vw, 50vw" 
+        alt="Descrição">
+   ```
+
+---
+
+#### **Pré-carregamento de Recursos**
+- **Preload**: Carrega recursos críticos antes do restante da página.  
+  ```html
+  <link rel="preload" href="estilo.css" as="style">
+  <link rel="preload" href="fonte.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  ```
+
+- **Prefetch**: Sugere ao navegador carregar recursos para navegação futura.  
+  ```html
+  <link rel="prefetch" href="pagina-futura.html">
+  ```
+
+---
+
+#### **Estratégias de Cache**
+- Use o atributo **cache-control** no servidor para definir políticas de cache para HTML, CSS, JS e imagens.  
+- Para conteúdo dinâmico, inclua versões no nome do arquivo:
+  ```html
+  <link rel="stylesheet" href="estilo-v2.css">
+  ```
+
+---
+
+### **Recursos de Acessibilidade Avançada**
+1. **Navegação pelo Teclado**
+   - Certifique-se de que elementos interativos como botões e links possam ser acessados pelo teclado.  
+   ```html
+   <button tabindex="0">Clique Aqui</button>
+   ```
+
+2. **Atributos ARIA (Accessible Rich Internet Applications)**
+   - **aria-expanded**: Indica o estado de expansão de menus ou acordeões.  
+   ```html
+   <button aria-expanded="false" aria-controls="menu">Menu</button>
+   <div id="menu" hidden>Conteúdo do Menu</div>
+   ```
+
+   - **aria-live**: Atualiza conteúdo dinamicamente para leitores de tela.  
+   ```html
+   <div aria-live="polite">Carregando...</div>
+   ```
+
+---
+
+#### **Estrutura Responsiva com Media Queries**
+Combine HTML com CSS para criar layouts adaptáveis:
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+No CSS:
+```css
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+```
+
+---
+
+### **Integração com Outras Tecnologias**
+1. **HTML e JavaScript**
+   - Use o DOM para manipular elementos HTML:
+     ```html
+     <button id="meuBotao">Clique Aqui</button>
+     <script>
+         document.getElementById('meuBotao').addEventListener('click', () => {
+             alert('Botão clicado!');
+         });
+     </script>
+     ```
+
+2. **HTML e APIs**
+   - Fetch para consumo de APIs:
+     ```html
+     <div id="dados"></div>
+     <script>
+         fetch('https://api.exemplo.com/dados')
+             .then(response => response.json())
+             .then(data => {
+                 document.getElementById('dados').textContent = data.nome;
+             });
+     </script>
+     ```
+
+---
+
