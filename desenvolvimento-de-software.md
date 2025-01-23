@@ -95,3 +95,24 @@
 
 Essa cheat-sheet pode ser adaptada às necessidades específicas de cada projeto.
 
+### **8. Encerramento do Projeto**  
+- **Objetivo**: Formalizar a conclusão do projeto e realizar o aprendizado organizacional.  
+- **Principais Atividades**:  
+  - Revisão do projeto para garantir que os objetivos foram atingidos.  
+  - Reunião de lições aprendidas com a equipe e stakeholders.  
+  - Arquivamento da documentação final.  
+  - Formalização do encerramento junto ao cliente ou patrocinador.  
+- **Entregáveis**:  
+  - Relatório de lições aprendidas.  
+  - Checklist de entrega completa.  
+  - Documento de encerramento do projeto.  
+
+---
+
+### **Considerações Gerais**  
+- **Ciclo de Vida**: Algumas abordagens utilizam ciclos iterativos e incrementais, onde as fases podem ser repetidas para cada iteração (como em metodologias ágeis).  
+- **Qualidade**: Garantir a qualidade em todas as fases é essencial para o sucesso do projeto. Utilize práticas como revisão de código, testes contínuos e auditorias de requisitos.  
+- **Comunicação**: Estabeleça canais claros para troca de informações entre a equipe e os stakeholders.  
+
+Essa cheat-sheet cobre todo o ciclo de desenvolvimento de software, podendo ser adaptada conforme o tamanho e a complexidade do projeto.
+
