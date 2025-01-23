@@ -69,7 +69,44 @@ Essa tabela e os exemplos ajudam a entender as diferenças e semelhanças entre 
     for (int i = 0; i < 5; i++) {
         printf("%d\n", i);  // Imprime 0 a 4
     }
+    
     ```
+Segue a análise comparativa do código fornecido em **Java**, **JavaScript** e **Python**, detalhando a sintaxe do **laço `for`**:
+
+| **Aspecto**             | **Java**                                                                                     | **JavaScript**                                                                           | **Python**                                                                                   |
+|--------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Declaração do laço**   | `for (int i = 0; i < 5; i++) {`<br>- `for`: Início do laço.<br>- `(int i = 0;`: Declaração e inicialização da variável `i`.<br>- `i < 5;`: Condição de execução.<br>- `i++`: Incremento da variável após cada iteração. | `for (let i = 0; i < 5; i++) {`<br>- Semelhante ao Java.<br>- Usa `let` (ou `var`, `const`) para declarar `i`.<br>- Estrutura do laço idêntica. | `for i in range(5):`<br>- `for`: Início do laço.<br>- `i in range(5)`: Itera valores de `0` a `4`.<br>- Não precisa de inicialização, condição ou incremento separados. |
+| **Bloco de código**      | `{ printf("%d\\n", i); }`<br>- `{}`: Delimita o bloco do laço.<br>- `printf("%d\\n", i);`: Imprime o valor atual de `i` com quebra de linha. | `{ console.log(i); }`<br>- `{}`: Delimita o bloco.<br>- `console.log(i);`: Exibe o valor de `i` no console. | `print(i)`<br>- Bloco definido pela indentação.<br>- `print(i)`: Imprime o valor atual de `i` com quebra de linha automática. |
+| **Incremento**           | `i++`: Incrementa `i` em 1 após cada iteração.                                              | `i++`: Incrementa `i` em 1 após cada iteração.                                           | O incremento é gerenciado automaticamente pelo `range()`.                                    |
+| **Faixa de valores**     | De 0 a 4. O laço termina quando `i` não atende mais à condição (`i < 5`).                    | De 0 a 4. O laço termina quando `i` não atende mais à condição (`i < 5`).                | `range(5)` gera os valores de 0 a 4 automaticamente.                                        |
+
+### Código completo em cada linguagem:
+
+**Java**:
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.printf("%d\n", i);  // Imprime 0 a 4
+}
+```
+
+**JavaScript**:
+```javascript
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // Imprime 0 a 4
+}
+```
+
+**Python**:
+```python
+for i in range(5):
+    print(i)  # Imprime 0 a 4
+```
+
+### Observações:
+1. **Java** e **JavaScript** utilizam uma estrutura de laço `for` tradicional, que inclui três partes: inicialização, condição e incremento.
+2. **Python** simplifica o laço com o uso do `range()`, que gera a sequência de valores automaticamente.
+3. Em todas as linguagens, o laço itera de 0 a 4, pois a condição de parada ou o intervalo exclui o limite superior (5).
+
 
 - **While**:
   - **Conceito**: Repete um bloco de código enquanto a condição for verdadeira.
@@ -80,6 +117,8 @@ Essa tabela e os exemplos ajudam a entender as diferenças e semelhanças entre 
         printf("%d\n", i);  // Imprime 0 a 4
         i++;
     }
+
+    
     ```
 
 - **Do While**:
