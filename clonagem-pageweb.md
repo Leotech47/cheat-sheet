@@ -61,3 +61,38 @@
    - Não copie páginas para uso comercial sem autorização explícita.  
    - Certifique-se de que os recursos externos (ex.: APIs, fontes) funcionem corretamente.
 
+#### **8. Verifique Recursos Dinâmicos**  
+   - Se a página usa funcionalidades dinâmicas (ex.: formulários, APIs, banco de dados):  
+     - Analise os scripts JavaScript para entender como eles funcionam.  
+     - Recrie ou substitua funcionalidades dinâmicas com seus próprios recursos (ex.: criar APIs próprias).  
+     - Teste extensivamente para garantir que a interação está funcionando corretamente.  
+
+---
+
+#### **9. Otimize o Código**  
+   - **Remova Recursos Desnecessários:** Exclua partes do código que não serão utilizadas.  
+   - **Minimize os Arquivos:** Use ferramentas como **Terser** ou **CSSNano** para compactar JavaScript e CSS.  
+   - **Melhore a Responsividade:** Certifique-se de que o layout é adaptável a diferentes dispositivos.  
+
+---
+
+#### **10. Documente as Alterações**  
+   - Mantenha um registro das mudanças feitas no código para facilitar atualizações futuras.  
+   - Comente o código para indicar onde alterações foram realizadas ou recursos foram adicionados.
+
+---
+
+#### **11. Realize Testes de Compatibilidade**  
+   - Verifique o funcionamento da página em diferentes navegadores (Chrome, Firefox, Safari, etc.) e dispositivos.  
+   - Certifique-se de que todos os links, botões e funcionalidades estão operacionais.
+
+---
+
+#### **12. Revise a Ética e Legalidade**  
+   - **Considere o propósito:** Se o objetivo é educacional ou pessoal, certifique-se de que o uso não viola políticas de direitos autorais.  
+   - Para projetos comerciais, **modifique substancialmente** o design e o conteúdo para evitar infrações legais.
+
+---
+
+Com essas etapas concluídas, você terá clonado e adaptado uma página web de maneira estruturada e ética.
+
