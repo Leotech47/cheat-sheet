@@ -118,6 +118,47 @@ for i in range(5):
         i++;
     }
 
+Segue a análise comparativa do código fornecido em **Java**, **JavaScript** e **Python**, detalhando a sintaxe do **laço `while`**:
+
+| **Aspecto**             | **Java**                                                                                      | **JavaScript**                                                                          | **Python**                                                                                   |
+|--------------------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Declaração de variável** | `int i = 0;`<br>- Declaração e inicialização de `i` como inteiro.                            | `let i = 0;`<br>- Declaração e inicialização de `i`.                                    | `i = 0`<br>- Inicialização direta da variável.                                               |
+| **Estrutura do laço**    | `while (i < 5) {`<br>- `while`: Início do laço.<br>- `(i < 5)`: Condição avaliada antes de cada iteração.<br>- `{}`: Delimita o bloco de código do laço. | `while (i < 5) {`<br>- Estrutura idêntica à do Java.<br>- Usa parênteses para a condição e chaves para o bloco. | `while i < 5:`<br>- Não usa parênteses na condição.<br>- Dois pontos (`:`) indicam o início do bloco. |
+| **Bloco do laço**        | `{ printf("%d\\n", i); i++; }`<br>- `{}`: Delimita o bloco do laço.<br>- `printf`: Imprime o valor de `i`.<br>- `i++`: Incremento ao final de cada iteração. | `{ console.log(i); i++; }`<br>- `{}`: Delimita o bloco.<br>- `console.log`: Imprime o valor de `i`.<br>- `i++`: Incremento ao final de cada iteração. | `print(i)`<br>- Bloco delimitado por indentação.<br>- `i += 1`: Incremento ao final de cada iteração. |
+| **Condição de parada**   | `i < 5`: O laço continua enquanto a condição for verdadeira.                                  | `i < 5`: Mesma lógica do Java.                                                         | `i < 5`: Mesma lógica do Java.                                                              |
+
+### Código completo em cada linguagem:
+
+**Java**:
+```java
+int i = 0;
+while (i < 5) {
+    System.out.printf("%d\n", i);  // Imprime 0 a 4
+    i++;
+}
+```
+
+**JavaScript**:
+```javascript
+let i = 0;
+while (i < 5) {
+    console.log(i);  // Imprime 0 a 4
+    i++;
+}
+```
+
+**Python**:
+```python
+i = 0
+while i < 5:
+    print(i)  # Imprime 0 a 4
+    i += 1
+```
+
+### Observações:
+1. **Java** e **JavaScript** utilizam estruturas semelhantes, com a declaração de variável antes do laço e o uso explícito de parênteses para a condição e chaves para o bloco.
+2. **Python** é mais conciso, dispensando parênteses e chaves, utilizando indentação e `:` para organizar o código.
+3. Em todas as linguagens, o valor de `i` é incrementado manualmente ao final de cada iteração (`i++` ou `i += 1`), e o laço termina quando a condição `i < 5` se torna falsa.
     
     ```
 
@@ -131,6 +172,7 @@ for i in range(5):
         i++;
     } while (i < 5);
     ```
+
 
 ---
 
