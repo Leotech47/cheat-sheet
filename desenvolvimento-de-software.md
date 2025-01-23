@@ -116,3 +116,33 @@ Essa cheat-sheet pode ser adaptada às necessidades específicas de cada projeto
 
 Essa cheat-sheet cobre todo o ciclo de desenvolvimento de software, podendo ser adaptada conforme o tamanho e a complexidade do projeto.
 
+Não há mais etapas formais após o encerramento do projeto, mas você pode considerar **boas práticas complementares** para melhorar a continuidade e o aprendizado organizacional. Seguem algumas sugestões adicionais:  
+
+---
+
+### **Boas Práticas Pós-Encerramento**  
+
+#### **1. Monitoramento Pós-Entrega**
+- Acompanhe o desempenho do software nas primeiras semanas após a implantação.  
+- Recolha feedback dos usuários para identificar ajustes ou melhorias.  
+
+#### **2. Atualizações Contínuas**
+- Planeje um ciclo de manutenção preventiva para evitar problemas futuros.  
+- Avalie demandas de evolução com base em mudanças tecnológicas ou nos negócios.  
+
+#### **3. Gestão do Conhecimento**
+- Documente as lições aprendidas de forma acessível para outros projetos futuros.  
+- Mantenha um repositório centralizado de artefatos do projeto, como códigos, especificações e relatórios.  
+
+#### **4. Avaliação da Equipe**
+- Realize reuniões retrospectivas para discutir o que funcionou bem e o que pode ser melhorado.  
+- Reconheça o desempenho da equipe e promova ações de capacitação, se necessário.  
+
+#### **5. Planejamento para Sustentabilidade**
+- Avalie a necessidade de contratos de suporte técnico ou treinamento para os usuários.  
+- Garanta que a infraestrutura de hospedagem e as licenças de software estejam alinhadas com a demanda futura.  
+
+---
+
+Essas práticas complementam o ciclo de desenvolvimento e ajudam a garantir o sucesso contínuo do software no longo prazo.
+
