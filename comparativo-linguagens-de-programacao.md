@@ -305,7 +305,113 @@ print(a % b)  # 0 (módulo)
       printf("Falso");
   }
   ```
+Segue uma tabela comparativa detalhada sobre a sintaxe do código fornecido em **Java**, **JavaScript** e **Python**, abordando o uso de **operadores lógicos** e o controle condicional:
 
+| **Aspecto**             | **Java**                                                                                             | **JavaScript**                                                                                      | **Python**                                                                                         |
+|--------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Declaração de variáveis** | `int a = 1, b = 0;`<br>- Declaração explícita de tipo (`int`).                                     | `let a = 1, b = 0;`<br>- Declaração com `let` (ou `const`).                                       | `a = 1; b = 0`<br>- Declaração direta sem especificação de tipo.                                 |
+| **Estrutura condicional** | `if (a && b) { ... } else { ... }`<br>- `if`: Avalia a condição.<br>- `else`: Bloco alternativo caso a condição seja falsa.<br>- `{}`: Delimita os blocos de código. | `if (a && b) { ... } else { ... }`<br>- Idêntico ao Java.<br>- Usa `{}` para delimitar os blocos.  | `if a and b:`<br>- Usa `:` para iniciar os blocos.<br>- O bloco é delimitado por **indentação**.  |
+| **Operador lógico AND**   | `a && b`<br>- Retorna verdadeiro se **ambos** os operandos forem verdadeiros.                       | `a && b`<br>- Retorna verdadeiro se **ambos** os operandos forem verdadeiros.                     | `a and b`<br>- Retorna verdadeiro se **ambos** os operandos forem verdadeiros.                    |
+| **Operador lógico OR**    | `a || b`<br>- Retorna verdadeiro se **um ou ambos** os operandos forem verdadeiros.                 | `a || b`<br>- Retorna verdadeiro se **um ou ambos** os operandos forem verdadeiros.               | `a or b`<br>- Retorna verdadeiro se **um ou ambos** os operandos forem verdadeiros.               |
+| **Operador lógico NOT**   | `!a`<br>- Retorna verdadeiro se o operando for falso.                                               | `!a`<br>- Retorna verdadeiro se o operando for falso.                                              | `not a`<br>- Retorna verdadeiro se o operando for falso.                                          |
+| **Saída de resultados**  | `System.out.printf("Texto");`<br>- `printf`: Exibe resultados formatados.                            | `console.log("Texto");`<br>- Exibe resultados no console.                                          | `print("Texto")`<br>- Exibe resultados diretamente no terminal.                                   |
+
+---
+
+### Código completo em cada linguagem com exemplos de operadores lógicos:
+
+**Java**:
+```java
+int a = 1, b = 0;
+
+// Operador lógico AND
+if (a == 1 && b == 1) {
+    System.out.printf("AND: Verdadeiro\n");
+} else {
+    System.out.printf("AND: Falso\n");
+}
+
+// Operador lógico OR
+if (a == 1 || b == 1) {
+    System.out.printf("OR: Verdadeiro\n");
+} else {
+    System.out.printf("OR: Falso\n");
+}
+
+// Operador lógico NOT
+if (!(a == 1)) {
+    System.out.printf("NOT: Verdadeiro\n");
+} else {
+    System.out.printf("NOT: Falso\n");
+}
+```
+
+**JavaScript**:
+```javascript
+let a = 1, b = 0;
+
+// Operador lógico AND
+if (a === 1 && b === 1) {
+    console.log("AND: Verdadeiro");
+} else {
+    console.log("AND: Falso");
+}
+
+// Operador lógico OR
+if (a === 1 || b === 1) {
+    console.log("OR: Verdadeiro");
+} else {
+    console.log("OR: Falso");
+}
+
+// Operador lógico NOT
+if (!(a === 1)) {
+    console.log("NOT: Verdadeiro");
+} else {
+    console.log("NOT: Falso");
+}
+```
+
+**Python**:
+```python
+a = 1
+b = 0
+
+# Operador lógico AND
+if a == 1 and b == 1:
+    print("AND: Verdadeiro")
+else:
+    print("AND: Falso")
+
+# Operador lógico OR
+if a == 1 or b == 1:
+    print("OR: Verdadeiro")
+else:
+    print("OR: Falso")
+
+# Operador lógico NOT
+if not (a == 1):
+    print("NOT: Verdadeiro")
+else:
+    print("NOT: Falso")
+```
+
+---
+
+### Observações:
+1. **Operadores lógicos**:  
+   - **AND**: Retorna verdadeiro apenas se **todos** os operandos forem verdadeiros.  
+   - **OR**: Retorna verdadeiro se pelo menos **um** dos operandos for verdadeiro.  
+   - **NOT**: Inverte o valor lógico do operando.  
+
+2. **Diferenças na sintaxe**:  
+   - Em Java e JavaScript, os operadores são `&&`, `||` e `!`.  
+   - Em Python, os operadores são `and`, `or` e `not`, tornando o código mais legível.
+
+3. **Saída de resultados**:  
+   - Java utiliza `printf` para saída formatada.  
+   - JavaScript usa `console.log`.  
+   - Python utiliza `print`, que é mais direto.
 
 ---
 
