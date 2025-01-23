@@ -231,6 +231,65 @@ while True:
   printf("%d\n", a % b);  // 0  (módulo)
   ```
 
+Segue a análise comparativa do código fornecido em **Java**, **JavaScript** e **Python**, detalhando a sintaxe das **operações aritméticas**:
+
+| **Aspecto**             | **Java**                                                                                          | **JavaScript**                                                                                      | **Python**                                                                                       |
+|--------------------------|--------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Declaração de variáveis** | `int a = 10, b = 5;`<br>- Declaração e inicialização de múltiplas variáveis do tipo inteiro.        | `let a = 10, b = 5;`<br>- Declaração e inicialização de variáveis.<br>- `let` ou `const` podem ser usados. | `a = 10; b = 5`<br>- Inicialização direta sem necessidade de especificar tipo.                  |
+| **Operador de soma**     | `a + b`<br>- Soma os valores de `a` e `b`.                                                        | `a + b`<br>- Soma os valores de `a` e `b`.                                                        | `a + b`<br>- Soma os valores de `a` e `b`.                                                     |
+| **Operador de subtração** | `a - b`<br>- Subtrai o valor de `b` do valor de `a`.                                              | `a - b`<br>- Subtrai o valor de `b` do valor de `a`.                                              | `a - b`<br>- Subtrai o valor de `b` do valor de `a`.                                           |
+| **Operador de multiplicação** | `a * b`<br>- Multiplica os valores de `a` e `b`.                                                | `a * b`<br>- Multiplica os valores de `a` e `b`.                                                 | `a * b`<br>- Multiplica os valores de `a` e `b`.                                              |
+| **Operador de divisão**  | `a / b`<br>- Realiza a divisão inteira se ambos os operandos forem inteiros.                       | `a / b`<br>- Retorna a divisão como ponto flutuante, mesmo que ambos os operandos sejam inteiros. | `a / b`<br>- Retorna a divisão como ponto flutuante.<br>`a // b` retorna a divisão inteira.     |
+| **Operador de módulo**   | `a % b`<br>- Retorna o resto da divisão de `a` por `b`.                                            | `a % b`<br>- Retorna o resto da divisão de `a` por `b`.                                           | `a % b`<br>- Retorna o resto da divisão de `a` por `b`.                                        |
+| **Saída dos resultados** | `System.out.printf("%d\n", a + b);`<br>- `printf`: Exibe resultados formatados.<br>- `%d`: Especifica que o valor é inteiro. | `console.log(a + b);`<br>- `console.log`: Exibe os resultados no console.                        | `print(a + b)`<br>- `print`: Exibe os resultados no terminal ou saída padrão.                  |
+
+### Código completo em cada linguagem:
+
+**Java**:
+```java
+int a = 10, b = 5;
+System.out.printf("%d\n", a + b);  // 15 (soma)
+System.out.printf("%d\n", a - b);  // 5  (subtração)
+System.out.printf("%d\n", a * b);  // 50 (multiplicação)
+System.out.printf("%d\n", a / b);  // 2  (divisão inteira)
+System.out.printf("%d\n", a % b);  // 0  (módulo)
+```
+
+**JavaScript**:
+```javascript
+let a = 10, b = 5;
+console.log(a + b);  // 15 (soma)
+console.log(a - b);  // 5  (subtração)
+console.log(a * b);  // 50 (multiplicação)
+console.log(a / b);  // 2  (divisão com ponto flutuante)
+console.log(a % b);  // 0  (módulo)
+```
+
+**Python**:
+```python
+a = 10
+b = 5
+print(a + b)  # 15 (soma)
+print(a - b)  # 5  (subtração)
+print(a * b)  # 50 (multiplicação)
+print(a / b)  # 2.0 (divisão com ponto flutuante)
+print(a % b)  # 0 (módulo)
+```
+
+### Observações:
+1. **Declaração de variáveis**:  
+   - Em **Java**, os tipos das variáveis precisam ser explicitamente declarados.  
+   - Em **JavaScript** e **Python**, os tipos são dinâmicos e não precisam ser especificados.
+
+2. **Operações aritméticas**:  
+   - **Java** realiza divisão inteira quando ambos os operandos são inteiros.  
+   - **JavaScript** e **Python** retornam divisões como ponto flutuante, exceto se especificado o contrário (como `//` em Python).
+
+3. **Saída de resultados**:  
+   - **Java** utiliza `printf` com especificadores de formato (`%d` para inteiros).  
+   - **JavaScript** usa `console.log`.  
+   - **Python** usa `print`, com suporte direto a diferentes tipos de dados.
+
 ---
 
 
@@ -246,6 +305,7 @@ while True:
       printf("Falso");
   }
   ```
+
 
 ---
 
