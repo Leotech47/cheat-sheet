@@ -321,6 +321,122 @@ print(a % b)  # 0 (módulo)
       printf("São diferentes");
   }
   ```
+Segue uma tabela comparativa detalhada sobre a sintaxe do código fornecido em **Java**, **JavaScript** e **Python**, abordando o uso de **operadores relacionais** e o controle condicional:
+
+| **Aspecto**             | **Java**                                                                                             | **JavaScript**                                                                                      | **Python**                                                                                         |
+|--------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Declaração de variáveis** | `int a = 5, b = 10;`<br>- Declaração explícita de tipo (`int`).                                     | `let a = 5, b = 10;`<br>- Declaração com `let` (ou `const`).                                       | `a = 5; b = 10`<br>- Declaração direta sem especificação de tipo.                                 |
+| **Estrutura condicional** | `if (a == b) { ... } else { ... }`<br>- `if`: Avalia a condição.<br>- `else`: Bloco alternativo caso a condição seja falsa.<br>- `{}`: Delimita os blocos de código. | `if (a == b) { ... } else { ... }`<br>- Idêntico ao Java.<br>- Usa `{}` para delimitar os blocos.  | `if a == b:`<br>- Usa `:` para iniciar os blocos.<br>- O bloco é delimitado por **indentação**.  |
+| **Operador de igualdade** | `a == b`<br>- Retorna verdadeiro se `a` for igual a `b`.                                            | `a == b`<br>- Retorna verdadeiro se `a` for igual a `b`.                                           | `a == b`<br>- Retorna verdadeiro se `a` for igual a `b`.                                          |
+| **Operador de diferença** | `a != b`<br>- Retorna verdadeiro se `a` for diferente de `b`.                                       | `a != b`<br>- Retorna verdadeiro se `a` for diferente de `b`.                                      | `a != b`<br>- Retorna verdadeiro se `a` for diferente de `b`.                                     |
+| **Operador maior**       | `a > b`<br>- Retorna verdadeiro se `a` for maior que `b`.                                           | `a > b`<br>- Retorna verdadeiro se `a` for maior que `b`.                                          | `a > b`<br>- Retorna verdadeiro se `a` for maior que `b`.                                         |
+| **Operador maior ou igual** | `a >= b`<br>- Retorna verdadeiro se `a` for maior ou igual a `b`.                                   | `a >= b`<br>- Retorna verdadeiro se `a` for maior ou igual a `b`.                                  | `a >= b`<br>- Retorna verdadeiro se `a` for maior ou igual a `b`.                                 |
+| **Operador menor**       | `a < b`<br>- Retorna verdadeiro se `a` for menor que `b`.                                           | `a < b`<br>- Retorna verdadeiro se `a` for menor que `b`.                                          | `a < b`<br>- Retorna verdadeiro se `a` for menor que `b`.                                         |
+| **Operador menor ou igual** | `a <= b`<br>- Retorna verdadeiro se `a` for menor ou igual a `b`.                                   | `a <= b`<br>- Retorna verdadeiro se `a` for menor ou igual a `b`.                                  | `a <= b`<br>- Retorna verdadeiro se `a` for menor ou igual a `b`.                                 |
+| **Saída de resultados**  | `System.out.printf("Texto");`<br>- `printf`: Exibe resultados formatados.                            | `console.log("Texto");`<br>- Exibe resultados no console.                                          | `print("Texto")`<br>- Exibe resultados diretamente no terminal.                                   |
+
+---
+
+### Código completo em cada linguagem com exemplos de operadores relacionais:
+
+**Java**:
+```java
+int a = 5, b = 10;
+
+if (a == b) {
+    System.out.printf("São iguais\n");
+} else {
+    System.out.printf("São diferentes\n");
+}
+
+if (a != b) {
+    System.out.printf("São diferentes\n");
+}
+
+if (a > b) {
+    System.out.printf("a é maior que b\n");
+}
+
+if (a >= b) {
+    System.out.printf("a é maior ou igual a b\n");
+}
+
+if (a < b) {
+    System.out.printf("a é menor que b\n");
+}
+
+if (a <= b) {
+    System.out.printf("a é menor ou igual a b\n");
+}
+```
+
+**JavaScript**:
+```javascript
+let a = 5, b = 10;
+
+if (a == b) {
+    console.log("São iguais");
+} else {
+    console.log("São diferentes");
+}
+
+if (a != b) {
+    console.log("São diferentes");
+}
+
+if (a > b) {
+    console.log("a é maior que b");
+}
+
+if (a >= b) {
+    console.log("a é maior ou igual a b");
+}
+
+if (a < b) {
+    console.log("a é menor que b");
+}
+
+if (a <= b) {
+    console.log("a é menor ou igual a b");
+}
+```
+
+**Python**:
+```python
+a = 5
+b = 10
+
+if a == b:
+    print("São iguais")
+else:
+    print("São diferentes")
+
+if a != b:
+    print("São diferentes")
+
+if a > b:
+    print("a é maior que b")
+
+if a >= b:
+    print("a é maior ou igual a b")
+
+if a < b:
+    print("a é menor que b")
+
+if a <= b:
+    print("a é menor ou igual a b")
+```
+
+---
+
+### Observações:
+1. **Estrutura condicional**:  
+   - Java e JavaScript utilizam parênteses para envolver a condição e chaves para delimitar os blocos de código.
+   - Python é mais conciso, dispensando parênteses na condição e utilizando indentação para delimitar os blocos.
+
+2. **Operadores relacionais**:  
+   - São idênticos nas três linguagens, o que facilita a compreensão inicial.
+   - Em Python, o uso de `print` é direto e não exige especificadores como `%d` em Java.
 
 ---
 
