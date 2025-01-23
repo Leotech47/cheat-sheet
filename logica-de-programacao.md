@@ -781,3 +781,159 @@ Essa continuação complementa a cheat-sheet com conceitos mais avançados e exe
 
 ---
 
+### 27. **Algoritmo de Busca Binária**
+
+- **Conceito**: Pesquisa eficiente em uma lista ordenada, dividindo-a em metades para encontrar o valor desejado.
+- **Exemplo**:
+  ```c
+  int buscaBinaria(int arr[], int n, int valor) {
+      int inicio = 0, fim = n - 1;
+      while (inicio <= fim) {
+          int meio = inicio + (fim - inicio) / 2;
+          if (arr[meio] == valor) {
+              return meio;  // Elemento encontrado
+          }
+          if (arr[meio] < valor) {
+              inicio = meio + 1;
+          } else {
+              fim = meio - 1;
+          }
+      }
+      return -1;  // Elemento não encontrado
+  }
+
+  int main() {
+      int arr[] = {10, 20, 30, 40, 50};
+      int posicao = buscaBinaria(arr, 5, 30);
+      if (posicao != -1) {
+          printf("Elemento encontrado na posição %d", posicao);
+      } else {
+          printf("Elemento não encontrado");
+      }
+      return 0;
+  }
+  ```
+
+---
+
+### 28. **Recursão**
+
+- **Conceito**: Função que chama a si mesma para resolver problemas menores de forma iterativa.
+- **Exemplo**:
+  ```c
+  int fatorial(int n) {
+      if (n == 0 || n == 1) {
+          return 1;  // Caso base
+      }
+      return n * fatorial(n - 1);  // Chamada recursiva
+  }
+
+  int main() {
+      int numero = 5;
+      printf("Fatorial de %d é %d", numero, fatorial(numero));  // 120
+      return 0;
+  }
+  ```
+
+---
+
+### 29. **Algoritmo de Ordenação (Quick Sort)**
+
+- **Conceito**: Escolhe um elemento como pivô, particiona a lista em menores e maiores que o pivô e ordena recursivamente.
+- **Exemplo**:
+  ```c
+  void troca(int* a, int* b) {
+      int temp = *a;
+      *a = *b;
+      *b = temp;
+  }
+
+  int particiona(int arr[], int baixo, int alto) {
+      int pivô = arr[alto];
+      int i = baixo - 1;
+
+      for (int j = baixo; j < alto; j++) {
+          if (arr[j] < pivô) {
+              i++;
+              troca(&arr[i], &arr[j]);
+          }
+      }
+      troca(&arr[i + 1], &arr[alto]);
+      return i + 1;
+  }
+
+  void quickSort(int arr[], int baixo, int alto) {
+      if (baixo < alto) {
+          int pi = particiona(arr, baixo, alto);
+          quickSort(arr, baixo, pi - 1);
+          quickSort(arr, pi + 1, alto);
+      }
+  }
+
+  int main() {
+      int arr[] = {10, 7, 8, 9, 1, 5};
+      int n = 6;
+      quickSort(arr, 0, n - 1);
+      for (int i = 0; i < n; i++) {
+          printf("%d ", arr[i]);  // 1 5 7 8 9 10
+      }
+      return 0;
+  }
+  ```
+
+---
+
+### 30. **Estruturas de Dados - Tabela Hash**
+
+- **Conceito**: Estrutura que associa chaves a valores usando uma função de hash para mapeamento.
+- **Exemplo**:
+  ```c
+  #include <stdio.h>
+  #include <stdlib.h>
+
+  #define TAMANHO 10
+
+  struct Node {
+      int chave;
+      int valor;
+      struct Node* proximo;
+  };
+
+  struct Node* tabelaHash[TAMANHO];
+
+  int hash(int chave) {
+      return chave % TAMANHO;
+  }
+
+  void insere(int chave, int valor) {
+      int indice = hash(chave);
+      struct Node* novoNode = (struct Node*)malloc(sizeof(struct Node));
+      novoNode->chave = chave;
+      novoNode->valor = valor;
+      novoNode->proximo = tabelaHash[indice];
+      tabelaHash[indice] = novoNode;
+  }
+
+  int busca(int chave) {
+      int indice = hash(chave);
+      struct Node* temp = tabelaHash[indice];
+      while (temp != NULL) {
+          if (temp->chave == chave) {
+              return temp->valor;
+          }
+          temp = temp->proximo;
+      }
+      return -1;  // Não encontrado
+  }
+
+  int main() {
+      insere(1, 10);
+      insere(2, 20);
+      insere(11, 30);
+      printf("Valor para chave 11: %d\n", busca(11));  // 30
+      return 0;
+  }
+  ```
+
+---
+
