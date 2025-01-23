@@ -172,7 +172,49 @@ while i < 5:
         i++;
     } while (i < 5);
     ```
+Segue a análise comparativa do código fornecido em **Java**, **JavaScript** e **Python**, detalhando a sintaxe do **laço `do-while`**:
 
+| **Aspecto**             | **Java**                                                                                      | **JavaScript**                                                                          | **Python**                                                                                   |
+|--------------------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Declaração de variável** | `int i = 0;`<br>- Declaração e inicialização de `i` como inteiro.                            | `let i = 0;`<br>- Declaração e inicialização de `i`.                                    | `i = 0`<br>- Inicialização direta da variável.                                               |
+| **Estrutura do laço**    | `do { ... } while (i < 5);`<br>- `do`: Inicia o bloco do laço.<br>- `{}`: Delimita o bloco.<br>- `while (i < 5);`: Condição avaliada após cada iteração. | `do { ... } while (i < 5);`<br>- Idêntico ao Java.<br>- Condição avaliada após a execução do bloco. | **Python não possui um equivalente direto ao `do-while`**. A estrutura mais próxima seria um `while` com lógica para garantir a execução inicial. |
+| **Bloco do laço**        | `{ printf("%d\\n", i); i++; }`<br>- `{}`: Delimita o bloco.<br>- `printf`: Imprime o valor de `i`.<br>- `i++`: Incremento ao final de cada iteração. | `{ console.log(i); i++; }`<br>- `{}`: Delimita o bloco.<br>- `console.log`: Imprime o valor de `i`.<br>- `i++`: Incremento ao final de cada iteração. | Utiliza `while` com lógica adicional.<br>`print(i)` para exibir o valor e `i += 1` para incrementar.                       |
+| **Condição de parada**   | `i < 5`: Avaliada após a execução do bloco.                                                   | `i < 5`: Avaliada após a execução do bloco.                                             | Simula com `while True` e um `break` ao atingir a condição de parada.                       |
+
+### Código completo em cada linguagem:
+
+**Java**:
+```java
+int i = 0;
+do {
+    System.out.printf("%d\n", i);  // Imprime 0 a 4
+    i++;
+} while (i < 5);
+```
+
+**JavaScript**:
+```javascript
+let i = 0;
+do {
+    console.log(i);  // Imprime 0 a 4
+    i++;
+} while (i < 5);
+```
+
+**Python (simulação do `do-while`)**:
+```python
+i = 0
+while True:
+    print(i)  # Imprime 0 a 4
+    i += 1
+    if i >= 5:  # Condição de parada
+        break
+```
+
+### Observações:
+1. **Java** e **JavaScript** possuem suporte nativo ao laço `do-while`, que garante que o bloco seja executado pelo menos uma vez antes de verificar a condição.
+2. **Python** não possui um laço `do-while` nativo. A estrutura mais próxima utiliza um `while True` combinado com um `break` para sair do laço ao atingir a condição.
+3. Em todas as linguagens, o laço itera de 0 a 4, imprimindo os valores e incrementando `i` a cada iteração.
 
 ---
 
@@ -190,6 +232,7 @@ while i < 5:
   ```
 
 ---
+
 
 ### 4. **Operadores Lógicos**
 
