@@ -1,4 +1,4 @@
-# Este E-book faz parte de um Desafio do curso "CHATGPT for DEV" da plataforma DIO.
+# Este E-book faz parte de um Desafio do curso "Formação CHATGPT for DEVS" da plataforma DIO.
 - Desafio: criar um E-book do zero utilizando a ferramenta de I.A - CHATGPT
 - Professor: Felipe Aguiar
 - GITHUB do professor: https://github.com/felipeAguiarCode/felipeAguiarCode
