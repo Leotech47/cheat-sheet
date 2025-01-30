@@ -172,3 +172,125 @@ O **Wget** é uma ferramenta extremamente poderosa para automação de downloads
 
 Se precisar de mais detalhes ou um tutorial específico, é só avisar! 🚀
 
+
+Agora que cobrimos as funções básicas e avançadas do **Wget**, vamos explorar mais alguns cenários de uso e truques que podem ser úteis para diferentes necessidades.  
+
+---
+
+## 📂 **Baixando Arquivos de um Servidor FTP**  
+
+O Wget pode ser usado para baixar arquivos de servidores FTP, tanto públicos quanto protegidos por senha.  
+
+### 🔹 **Baixar um Arquivo de um Servidor FTP Público**  
+```sh
+wget ftp://ftp.exemplo.com/arquivo.zip
+```
+> Baixa o arquivo `arquivo.zip` de um servidor FTP aberto (sem autenticação).  
+
+### 🔹 **Baixar Arquivos de um Servidor FTP com Autenticação**  
+```sh
+wget --ftp-user=usuario --ftp-password=senha ftp://ftp.exemplo.com/arquivo.zip
+```
+> Se o FTP exigir login, use `--ftp-user` e `--ftp-password`.  
+
+### 🔹 **Baixar um Diretório Completo via FTP**  
+```sh
+wget -r ftp://ftp.exemplo.com/pasta/
+```
+> Baixa toda a pasta e seus arquivos.  
+
+---
+
+## 🔀 **Gerenciando Velocidade e Conexões**  
+
+Se você estiver lidando com conexões instáveis ou quiser limitar o uso de banda, pode ajustar a velocidade e o número de conexões simultâneas.  
+
+### 🔹 **Limitar a Velocidade de Download**  
+```sh
+wget --limit-rate=500k https://exemplo.com/arquivo.zip
+```
+> Limita a velocidade do download para **500 KB/s**.  
+
+### 🔹 **Definir um Número Máximo de Tentativas**  
+```sh
+wget --tries=10 https://exemplo.com/arquivo.zip
+```
+> Tenta baixar o arquivo até **10 vezes** em caso de falha.  
+
+### 🔹 **Esperar um Tempo Antes de Tentar Novamente**  
+```sh
+wget --wait=10 --tries=5 https://exemplo.com/arquivo.zip
+```
+> Espera **10 segundos** entre as tentativas e tenta até **5 vezes**.  
+
+---
+
+## 🔑 **Autenticação em Sites com Login**  
+
+Se você precisa baixar arquivos de um site que exige login, pode usar **cookies** ou um **arquivo de credenciais**.  
+
+### 🔹 **Usando Cookies para Login**  
+1. Faça login no site com um navegador.  
+2. Exporte os cookies para um arquivo chamado `cookies.txt` (pode ser feito com extensões como EditThisCookie no Chrome).  
+3. Use o Wget para acessar a página autenticada:  
+   ```sh
+   wget --load-cookies=cookies.txt https://exemplo.com/area-restrita/arquivo.zip
+   ```
+
+### 🔹 **Usando Arquivo de Credenciais**  
+```sh
+wget --http-user=usuario --http-password=senha https://exemplo.com/privado.zip
+```
+> Autentica diretamente com **usuário e senha**.  
+
+---
+
+## 🖥 **Criando Espelhos de Sites**  
+
+Se você deseja criar um backup de um site ou acessar conteúdos offline, pode usar o Wget para espelhar páginas.  
+
+### 🔹 **Baixar um Site Completo para Navegação Offline**  
+```sh
+wget --mirror -p --convert-links -P meu_site https://exemplo.com
+```
+> Copia um site inteiro e ajusta os links para que possam ser acessados localmente.  
+
+### 🔹 **Baixar Apenas uma Parte do Site (Sem Sair do Domínio)**  
+```sh
+wget -r -l 3 -np https://exemplo.com/blog/
+```
+> Baixa apenas páginas dentro de `/blog/` sem seguir links para outros sites.  
+
+---
+
+## 🛠 **Wget vs. cURL – Qual a Diferença?**  
+
+Tanto o **Wget** quanto o **cURL** são usados para baixar arquivos via terminal, mas têm diferenças importantes:  
+
+| Característica | Wget | cURL |
+|--------------|------|------|
+| Suporte a HTTP, FTP, HTTPS | ✅ | ✅ |
+| Suporte a SCP, SFTP | ❌ | ✅ |
+| Download de Arquivos | ✅ | ✅ |
+| Download Recursivo | ✅ | ❌ |
+| Suporte a JSON / APIs | ❌ | ✅ |
+| Melhor para Automação Simples | ✅ | ❌ |
+
+Se você precisa apenas **baixar arquivos**, o Wget é a melhor opção. Se precisa de mais controle para **interagir com APIs e autenticação avançada**, o cURL pode ser mais útil.  
+
+---
+
+## 🎯 **Conclusão Final**  
+
+O **Wget** é uma ferramenta extremamente poderosa e flexível para baixar arquivos da internet. Ele pode ser usado para baixar arquivos individuais, espelhar sites inteiros, capturar dados protegidos por login e até mesmo gerenciar downloads com limites de velocidade.  
+
+### ✅ **Principais Casos de Uso do Wget:**  
+✔ Baixar arquivos simples e múltiplos simultaneamente.  
+✔ Fazer download recursivo de sites.  
+✔ Automatizar tarefas com scripts Bash.  
+✔ Capturar arquivos de servidores FTP.  
+✔ Gerenciar velocidade e conexões.  
+✔ Baixar arquivos de sites protegidos com login.  
+
+Se precisar de mais detalhes sobre um caso específico, só perguntar! 🚀
+
