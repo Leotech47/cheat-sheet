@@ -1,0 +1,87 @@
+## 📌 **O que é o Wget?**  
+
+O **Wget** é uma ferramenta de linha de comando usada para baixar arquivos da internet via **HTTP, HTTPS e FTP**. Ele é especialmente útil para automatizar downloads, baixar sites inteiros, capturar arquivos de servidores remotos e até mesmo lidar com redes instáveis (retomando downloads interrompidos).  
+
+### ✅ **Principais Características do Wget**  
+- **Gratuito e de código aberto**  
+- **Funciona em sistemas UNIX/Linux, Windows e macOS**  
+- **Suporte a downloads recursivos (baixar sites inteiros)**  
+- **Capacidade de retomar downloads interrompidos**  
+- **Funciona sem interface gráfica, ideal para servidores e automação**  
+
+---
+
+## 🚀 **Como Usar o Wget?**  
+
+O Wget é executado pelo terminal. Aqui estão alguns comandos básicos:  
+
+### 📥 **Baixar um Arquivo**  
+```sh
+wget https://exemplo.com/arquivo.zip
+```
+> Baixa o arquivo `arquivo.zip` para o diretório atual.  
+
+### 🔄 **Retomar um Download Interrompido**  
+```sh
+wget -c https://exemplo.com/arquivo.zip
+```
+> O parâmetro `-c` (continue) permite retomar um download do ponto onde parou.  
+
+### 📁 **Baixar um Site Inteiro**  
+```sh
+wget --mirror -p --convert-links -P meu_site https://exemplo.com
+```
+> Copia um site inteiro e ajusta os links locais.  
+
+### 🚀 **Baixar Vários Arquivos de uma Lista**  
+1. Crie um arquivo de texto (`lista.txt`) com os links, um por linha.  
+2. Execute:  
+```sh
+wget -i lista.txt
+```
+> O Wget lerá a lista e baixará todos os arquivos.  
+
+### 🔑 **Baixar Arquivos Protegidos por Senha**  
+```sh
+wget --user=meu_usuario --password=minha_senha https://exemplo.com/privado.zip
+```
+> Útil para acessar sites que exigem login.  
+
+---
+
+## ⚡ **Opções Úteis do Wget**  
+| Opção | Descrição |
+|--------|------------|
+| `-q` | Modo silencioso (não exibe saída no terminal). |
+| `-b` | Executa o download em segundo plano. |
+| `--limit-rate=200k` | Limita a taxa de download a 200 KB/s. |
+| `--no-check-certificate` | Ignora erros de SSL ao baixar via HTTPS. |
+| `-r` | Faz download recursivo (incluindo subdiretórios). |
+
+---
+
+## 🛠 **Instalando o Wget**  
+
+Se o Wget não estiver instalado no seu sistema, siga os passos abaixo:  
+
+### 📌 **Linux (Ubuntu/Debian)**  
+```sh
+sudo apt update && sudo apt install wget -y
+```
+
+### 📌 **MacOS (via Homebrew)**  
+```sh
+brew install wget
+```
+
+### 📌 **Windows**  
+- Baixe o instalador: [GnuWin32 Wget](https://eternallybored.org/misc/wget/)  
+- Ou use o **Windows Subsystem for Linux (WSL)** para rodar o Wget no Windows.  
+
+---
+
+## 🎯 **Conclusão**  
+O Wget é uma ferramenta poderosa para baixar arquivos e sites de forma eficiente via terminal. Ele é amplamente utilizado para automação, administração de sistemas e scraping de conteúdo web.  
+
+💡 **Dica:** Experimente combinar o Wget com scripts shell para criar automações mais avançadas! 🚀
+
