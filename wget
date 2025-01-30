@@ -85,3 +85,90 @@ O Wget é uma ferramenta poderosa para baixar arquivos e sites de forma eficient
 
 💡 **Dica:** Experimente combinar o Wget com scripts shell para criar automações mais avançadas! 🚀
 
+Se você deseja continuar explorando o **Wget**, podemos aprofundar em funcionalidades mais avançadas, como manipulação de cabeçalhos HTTP, download paralelo e integração com scripts.  
+
+---
+
+## 🌍 **Manipulação de Cabeçalhos HTTP com Wget**  
+
+Alguns sites exigem que o navegador envie cabeçalhos específicos para permitir downloads. O Wget pode simular essas requisições com a opção `--header`.  
+
+### 🔹 **Baixar um Arquivo com um User-Agent Específico**  
+```sh
+wget --user-agent="Mozilla/5.0" https://exemplo.com/arquivo.pdf
+```
+> Alguns sites bloqueiam bots e exigem um **User-Agent** de navegador.  
+
+### 🔹 **Enviar um Cookie na Requisição**  
+```sh
+wget --header="Cookie: PHPSESSID=abc123xyz" https://exemplo.com/arquivo.zip
+```
+> Útil para sites que exigem login e mantêm a sessão com cookies.  
+
+---
+
+## 📡 **Download em Larga Escala e Automação**  
+
+Para baixar múltiplos arquivos simultaneamente e melhorar a eficiência, podemos usar `xargs` ou `parallel` no Linux.  
+
+### 🔹 **Download Paralelo com `xargs`**
+```sh
+cat urls.txt | xargs -n 1 -P 5 wget
+```
+> Este comando lê as URLs do arquivo `urls.txt` e faz até **5 downloads simultaneamente**.  
+
+### 🔹 **Criando um Script de Download Automático**  
+Se você precisa baixar arquivos regularmente, pode usar um script Bash:  
+
+```sh
+#!/bin/bash
+URLS="https://exemplo.com/arquivo1.zip https://exemplo.com/arquivo2.zip"
+
+for URL in $URLS; do
+  wget -c "$URL"
+done
+```
+> Salve o arquivo como `meus_downloads.sh` e execute com:  
+```sh
+bash meus_downloads.sh
+```
+
+---
+
+## 🏗 **Espelhamento e Web Scraping com Wget**  
+
+### 🔹 **Baixar Todos os Arquivos de um Tipo Específico**  
+```sh
+wget -r -A "*.pdf" https://exemplo.com/documentos/
+```
+> Este comando baixa **apenas arquivos PDF** da pasta `/documentos/`.  
+
+### 🔹 **Baixar Apenas uma Parte de um Site**  
+```sh
+wget -r -l 2 -np -A "*.jpg" https://exemplo.com/imagens/
+```
+> O Wget baixará imagens `.jpg`, mas **somente até 2 níveis de profundidade**, evitando navegar para outras pastas.  
+
+---
+
+## ⏳ **Agendando Downloads com Cron (Linux)**  
+Podemos usar **cron** para executar o Wget automaticamente em horários programados.  
+
+### 🔹 **Agendar um Download Diário às 3h da Manhã**
+1. Abra o editor de tarefas agendadas:  
+   ```sh
+   crontab -e
+   ```
+2. Adicione esta linha ao final do arquivo:  
+   ```sh
+   0 3 * * * wget -c https://exemplo.com/backup.zip -O /home/user/backups/backup.zip
+   ```
+> O sistema fará o download **todos os dias às 3h** e salvará o arquivo na pasta `/home/user/backups/`.  
+
+---
+
+## 🎯 **Conclusão Avançada**  
+O **Wget** é uma ferramenta extremamente poderosa para automação de downloads, scraping de sites e manipulação de arquivos remotos. Combinado com scripts, agendamento e integração com outras ferramentas, ele se torna indispensável para administradores de sistemas, desenvolvedores e pesquisadores.  
+
+Se precisar de mais detalhes ou um tutorial específico, é só avisar! 🚀
+
