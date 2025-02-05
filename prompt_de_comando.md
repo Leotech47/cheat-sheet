@@ -484,3 +484,184 @@ Isso abre o Bloco de Notas. Se o arquivo não existir, o Notepad perguntará se 
 
 Esses comandos funcionam para criar **arquivos de texto** no **CMD**, mas você pode alterar a extensão para `.bat`, `.csv`, `.log`, `.html` e outros conforme necessário.
 
+No **Prompt de Comando (CMD)** do Windows, você pode **instalar, atualizar, verificar a versão e executar um software** de diferentes maneiras, dependendo do programa.  
+
+Aqui estão os **principais métodos** para gerenciar softwares via CMD:
+
+---
+
+## **📥 1. Instalar um Software via CMD**
+A instalação pode ser feita de diferentes formas:
+
+### **1.1 Usando o `winget` (Windows 10 e 11)**
+O **winget** é o gerenciador de pacotes oficial da Microsoft:
+```cmd
+winget install NomeDoSoftware
+```
+📌 **Exemplo:** Para instalar o Google Chrome:
+```cmd
+winget install Google.Chrome
+```
+📌 **Para encontrar o nome correto de um software:**
+```cmd
+winget search NomeDoSoftware
+```
+
+---
+
+### **1.2 Usando o `choco` (Chocolatey)**
+Se o **Chocolatey** estiver instalado, você pode usá-lo:
+```cmd
+choco install nome-do-software -y
+```
+📌 **Exemplo:** Instalar o **VLC Player**:
+```cmd
+choco install vlc -y
+```
+
+---
+
+### **1.3 Instalando via Arquivo `.exe` ou `.msi`**
+Se você já tem o arquivo de instalação, use:
+```cmd
+start /wait nome-do-arquivo.exe /silent /norestart
+```
+📌 **Exemplo:** Instalar o Chrome via `.exe` baixado:
+```cmd
+start /wait chrome_installer.exe /silent /install
+```
+📌 **Para um `.msi`:**
+```cmd
+msiexec /i nome-do-arquivo.msi /qn
+```
+*(O `/qn` executa em modo silencioso.)*
+
+---
+
+## **🔄 2. Atualizar um Software**
+### **2.1 Atualizar com `winget`**
+```cmd
+winget upgrade NomeDoSoftware
+```
+📌 **Exemplo:** Atualizar o Chrome:
+```cmd
+winget upgrade Google.Chrome
+```
+📌 **Atualizar todos os softwares de uma vez:**
+```cmd
+winget upgrade --all
+```
+
+---
+
+### **2.2 Atualizar com `choco`**
+```cmd
+choco upgrade nome-do-software -y
+```
+📌 **Exemplo:** Atualizar o VLC:
+```cmd
+choco upgrade vlc -y
+```
+
+---
+
+## **🆙 3. Verificar a Versão de um Software**
+### **3.1 Com `winget`**
+```cmd
+winget list NomeDoSoftware
+```
+📌 **Exemplo:** Verificar a versão do Chrome:
+```cmd
+winget list Google.Chrome
+```
+
+---
+
+### **3.2 Verificar a versão manualmente**
+Alguns programas oferecem um comando próprio para exibir a versão:
+```cmd
+nome-do-software --version
+```
+📌 **Exemplo:** Verificar a versão do Node.js:
+```cmd
+node --version
+```
+Ou:
+```cmd
+node -v
+```
+
+📌 **Para programas instalados via `.msi`:**
+```cmd
+wmic product get name,version
+```
+Isso lista **todos os softwares instalados** e suas versões.
+
+---
+
+## **🚀 4. Executar um Software via CMD**
+### **4.1 Método Simples**
+Se o programa estiver no **PATH do Windows**, basta digitar o nome:
+```cmd
+notepad
+```
+Isso abre o **Bloco de Notas**.
+
+📌 **Outros exemplos:**
+```cmd
+chrome
+calc
+explorer
+```
+
+---
+
+### **4.2 Executar a partir do Caminho Completo**
+Se o programa não estiver no PATH, use o caminho completo:
+```cmd
+"C:\Program Files\Google\Chrome\Application\chrome.exe"
+```
+
+📌 **Exemplo para abrir o VLC:**
+```cmd
+"C:\Program Files\VideoLAN\VLC\vlc.exe"
+```
+
+---
+
+### **4.3 Executar um Software como Administrador**
+```cmd
+runas /user:Administrador "C:\Caminho\Do\Programa.exe"
+```
+📌 **Exemplo:** Executar o CMD como admin:
+```cmd
+runas /user:Administrador "cmd.exe"
+```
+
+---
+
+### **4.4 Executar um Programa e Esperar sua Finalização**
+```cmd
+start /wait notepad.exe
+```
+Isso abre o Bloco de Notas e o CMD só continua depois que ele for fechado.
+
+---
+
+## **📌 Resumo dos Comandos**
+| **Ação** | **Comando** |
+|------------|----------------------------|
+| **Instalar com Winget** | `winget install NomeDoSoftware` |
+| **Instalar com Chocolatey** | `choco install nome-do-software -y` |
+| **Instalar via `.exe`** | `start /wait nome.exe /silent /install` |
+| **Atualizar com Winget** | `winget upgrade NomeDoSoftware` |
+| **Atualizar todos (Winget)** | `winget upgrade --all` |
+| **Atualizar com Chocolatey** | `choco upgrade nome-do-software -y` |
+| **Verificar a versão (Winget)** | `winget list NomeDoSoftware` |
+| **Verificar versão de todos os programas** | `wmic product get name,version` |
+| **Executar um programa** | `notepad`, `chrome`, `vlc`, etc. |
+| **Executar via caminho completo** | `"C:\Caminho\Do\Programa.exe"` |
+| **Executar como Administrador** | `runas /user:Administrador "cmd.exe"` |
+
+---
+
