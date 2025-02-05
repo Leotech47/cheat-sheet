@@ -381,6 +381,7 @@ Isso exibe a versão do kernel do Linux.
 
 📌 **Executar um script bash do CMD:**
 ```cmd
+
 wsl bash script.sh
 ```
 Isso executa um script Linux dentro do Windows.
@@ -414,4 +415,72 @@ O **Prompt de Comando (CMD)** do Windows continua sendo uma **ferramenta poderos
 ✅ **Automatizar tarefas com scripts `.bat`**  
 ✅ **Integrar-se ao PowerShell e Linux (WSL)**  
 ✅ **Criar menus interativos e scripts avançados**  
+
+No **Prompt de Comando (CMD)** do Windows, você pode criar arquivos de diversas formas. Abaixo estão os principais métodos:
+
+---
+
+## **📜 Criando um Arquivo no CMD**
+
+### **1. Criar um arquivo vazio (`echo.`)**
+```cmd
+echo. > arquivo.txt
+```
+Isso cria um arquivo **"arquivo.txt"** vazio.
+
+---
+
+### **2. Criar um arquivo com conteúdo (`echo`)**
+```cmd
+echo Este é um teste > arquivo.txt
+```
+Isso cria um arquivo **"arquivo.txt"** e insere o texto `"Este é um teste"` dentro dele.
+
+📌 **Para adicionar mais linhas sem sobrescrever:**
+```cmd
+echo Nova linha >> arquivo.txt
+```
+O `>>` adiciona conteúdo ao final do arquivo sem apagar o que já existe.
+
+---
+
+### **3. Criar um arquivo usando `copy con` (método interativo)**
+```cmd
+copy con arquivo.txt
+```
+Depois, digite o conteúdo do arquivo e pressione **`Ctrl + Z`** seguido de **Enter** para salvar.
+
+---
+
+### **4. Criar um arquivo vazio com `fsutil` (requer permissões de admin)**
+```cmd
+fsutil file createnew arquivo.txt 0
+```
+Isso cria um arquivo vazio chamado **"arquivo.txt"** com **0 bytes**.
+
+📌 **Criar um arquivo de tamanho específico (exemplo: 1 MB = 1048576 bytes):**
+```cmd
+fsutil file createnew arquivo.txt 1048576
+```
+
+---
+
+### **5. Criar um arquivo usando `notepad`**
+```cmd
+notepad arquivo.txt
+```
+Isso abre o Bloco de Notas. Se o arquivo não existir, o Notepad perguntará se deseja criá-lo.
+
+---
+
+## **📌 Conclusão**
+| **Método** | **Descrição** |
+|------------|-------------|
+| `echo. > arquivo.txt` | Cria um arquivo vazio |
+| `echo Texto > arquivo.txt` | Cria um arquivo com conteúdo |
+| `copy con arquivo.txt` | Modo interativo (salvar com `Ctrl + Z`) |
+| `fsutil file createnew arquivo.txt 0` | Cria um arquivo de tamanho definido |
+| `notepad arquivo.txt` | Abre o arquivo no Bloco de Notas |
+
+Esses comandos funcionam para criar **arquivos de texto** no **CMD**, mas você pode alterar a extensão para `.bat`, `.csv`, `.log`, `.html` e outros conforme necessário.
 
